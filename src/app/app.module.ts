@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LayoutComponent } from './layout/layout.component';
+import { GuideComponent } from './guide/guide.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
+    GuideComponent,
    
   ],
   imports: [

@@ -1,33 +1,46 @@
 <div class="page-wrapper-with-header">
-<header class="global-header">
-  <div class="header-left">
-    <img src="assets/insight.png" alt="Logo" />
-  </div>
+  <header class="global-header">
+    <div class="header-left">
+      <img src="assets/insight.png" alt="Logo" />
+    </div>
 
-  <div class="header-title">
-    Insight Web API Documentation Portal
-  </div>
+    <div class="header-title">
+      Insight Web API Documentation Portal
+    </div>
 
- <div class="header-right">
-  <a href="https://documenter.getpostman.com/view/38917280/2sB34cpNV6#ba5e12ea-4467-47f5-8c1e-d6041c1c8599" 
-     class="postman-button-link" 
-     target="_blank" 
-     rel="noopener noreferrer">
-    🚀 Test the API in Postman
-  </a>
-</div>
-</header>
+    <div class="header-right">
+      <a href="https://documenter.getpostman.com/view/38917280/2sB34cpNV6#ba5e12ea-4467-47f5-8c1e-d6041c1c8599" 
+         class="postman-button-link" 
+         target="_blank" 
+         rel="noopener noreferrer">
+        🚀 Test the API in Postman
+      </a>
+    </div>
+  </header>
 
   <div class="page-wrapper">
     <aside class="sidebar">
-  
       <nav class="nav-menu">
         <h4>Documentation</h4>
         <ul>
+
+          <!-- 🌐 Guide section -->
+          <li class="dropdown" [class.open]="guideMenuOpen">
+            <div class="dropdown-header" (click)="toggleGuideMenu()">
+              <span class="arrow" [ngClass]="{ rotated: guideMenuOpen }">▾</span> Guide
+            </div>
+            <ul class="sub-menu" *ngIf="guideMenuOpen">
+              <li>
+                <a routerLink="/guide" routerLinkActive="active">🔐 Authentication</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- 📦 Bloc section -->
           <li class="dropdown" [class.open]="blocMenuOpen">
             <div class="dropdown-header" (click)="toggleBlocMenu()">
-  <span class="arrow" [ngClass]="{ rotated: blocMenuOpen }">▾</span> Bloc
-</div>
+              <span class="arrow" [ngClass]="{ rotated: blocMenuOpen }">▾</span> Bloc
+            </div>
             <ul class="sub-menu" *ngIf="blocMenuOpen">
               <li><a routerLink="/bloc" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">🧾 Overview and Usage Guide</a></li>
               <li><a routerLink="/bloc/list" routerLinkActive="active">📦 View all blocs</a></li>
@@ -36,6 +49,7 @@
               <li><a routerLink="/bloc/affect" routerLinkActive="active">🔗 Assign bloc to a dormitory</a></li>
             </ul>
           </li>
+
         </ul>
       </nav>
     </aside>

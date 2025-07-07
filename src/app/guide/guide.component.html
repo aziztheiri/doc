@@ -1,0 +1,53 @@
+<div class="auth-guide-container">
+  <h1>🔐 Authentication Guide</h1>
+  <p class="intro">
+    This guide will show you how to authenticate with our app and test all secured APIs.
+  </p>
+
+  <!-- Step 1: Open Swagger -->
+  <div class="step">
+    <h2>1️⃣ Open Swagger – Test APIs</h2>
+    <p>Click the button below to open the interactive API documentation (Swagger):</p>
+    <a href="http://localhost:8082/swagger-ui/index.html" class="swagger-btn" target="_blank">
+      🚀 Open Swagger API Tester
+    </a>
+    <img src="assets/image.png" alt="Swagger homepage" class="step-image" />
+  </div>
+
+  <!-- Step 2: Test Login -->
+  <div class="step">
+    <h2>2️⃣ Use Test Credentials to Login</h2>
+    <p>Call the <code>/auth/login</code> API using the following test credentials:</p>
+    <ul class="credentials">
+      <li><strong>Email:</strong> <code>testuserexample.com</code></li>
+      <li><strong>Password:</strong> <code>Test1234!</code></li>
+    </ul>
+    <img src="assets/image.png" alt="Login Swagger" class="step-image" />
+  </div>
+
+  <!-- Step 3: Check Your Email -->
+  <div class="step">
+    <h2>3️⃣ Check Your Email for the Code</h2>
+    <p>You will receive a 6-digit code in your email inbox.</p>
+    <img src="assets/image.png" alt="Email with login code" class="step-image" />
+  </div>
+
+  <!-- Step 4: Validate Code -->
+  <div class="step">
+    <h2>4️⃣ Validate the Code to Get Your Token</h2>
+    <p>Call <code>/auth/validate</code> with the code you received to retrieve your JWT token.</p>
+    <img src="assets/image.png" alt="Validate code in Swagger" class="step-image" />
+  </div>
+
+  <!-- Step 5: Paste Token into Swagger -->
+  <div class="step">
+    <h2>5️⃣ Paste Your Token in Swagger</h2>
+    <p>Click “Authorize” in the Swagger header and paste your token. This applies your token to all future requests.</p>
+    <img src="assets/image.png" alt="Authorize Swagger with JWT" class="step-image" />
+  </div>
+
+  <!-- Final Note -->
+  <div class="note">
+    <strong>⏱️ Note:</strong> The token is valid for <code>15 minutes</code>. If you encounter a 401 error, simply repeat the login process.
+  </div>
+</div>

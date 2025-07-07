@@ -6,6 +6,7 @@ import { BlocAddComponent } from './bloc-add/bloc-add.component';
 import { BlocUpdateComponent } from './bloc-update/bloc-update.component';
 import { BlocAffectComponent } from './bloc-affect/bloc-affect.component';
 import { LayoutComponent } from '../layout/layout.component';
+import { GuideComponent } from '../guide/guide.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
       { path: 'add', component: BlocAddComponent },
       { path: 'update', component: BlocUpdateComponent },
       { path: 'affect', component: BlocAffectComponent }
+      
     ]
   }
 ];
