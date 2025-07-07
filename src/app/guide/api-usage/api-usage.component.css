@@ -1,0 +1,76 @@
+.api-usage-container {
+  max-width: 900px;
+  font-family: 'Roboto', sans-serif;
+  color: #1a2340;
+}
+
+.api-usage-container h1 {
+  font-size: 2rem;
+  color: #2f4b94;
+  margin-bottom: 1.5rem;
+}
+
+.api-usage-container .intro {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.step {
+  margin-bottom: 3rem;
+  padding: 1.2rem 1.5rem;
+  border-left: 4px solid #007bb3;
+  background-color: #f7fbff;
+  border-radius: 6px;
+}
+
+.step h2 {
+  color: #2f4b94;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.step p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.step-image {
+  display: block;
+  max-width: 100%;
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.highlight-list,
+.tip-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.highlight-list li,
+.tip-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.highlight-list li::before,
+.tip-list li::before {
+  content: '👉';
+  position: absolute;
+  left: 0;
+}
+
+.note {
+  background-color: #fff9e6;
+  padding: 1.2rem;
+  border-left: 4px solid #ffc107;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #4d4d00;
+  margin-top: 2rem;
+}

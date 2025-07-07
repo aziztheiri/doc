@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LayoutComponent } from './layout/layout.component';
 import { GuideComponent } from './guide/guide.component';
+import { ApiUsageComponent } from './guide/api-usage/api-usage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     GuideComponent,
+    ApiUsageComponent,
    
   ],
   imports: [

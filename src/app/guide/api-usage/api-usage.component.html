@@ -1,0 +1,58 @@
+<div class="api-usage-container">
+  <h1>📡 API Usage Guide (Swagger)</h1>
+  <p class="intro">
+    This page helps you understand how to interact with our API directly through the Swagger interface.
+  </p>
+
+  <!-- Step 1: Access Swagger -->
+  <div class="step">
+    <h2>1️⃣ Navigating the Swagger Interface</h2>
+    <p>Go to the Swagger page to view all available endpoints grouped by functionality. Use the search bar to quickly find what you need.</p>
+    <img src="assets/swagger-overview.png" alt="Swagger Overview" class="step-image" />
+  </div>
+
+  <!-- Step 2: Expand and Read Endpoint Info -->
+  <div class="step">
+    <h2>2️⃣ Understand Each Endpoint</h2>
+    <p>Click on any endpoint to expand it. You'll see:</p>
+    <ul class="highlight-list">
+      <li><strong>HTTP Method:</strong> (GET, POST, PUT, DELETE)</li>
+      <li><strong>URL:</strong> with any required path variables</li>
+      <li><strong>Parameters:</strong> with their types, descriptions, and whether they are required</li>
+    </ul>
+    <img src="assets/endpoint-expanded.png" alt="Expanded endpoint details" class="step-image" />
+  </div>
+
+  <!-- Step 3: Enter Parameters -->
+  <div class="step">
+    <h2>3️⃣ Entering Parameters</h2>
+    <p>Before testing, you must enter required parameters. Tips:</p>
+    <ul class="tip-list">
+      <li>📌 Check if the parameter is <strong>in path, query, or body</strong></li>
+      <li>🧪 Body params are usually in JSON — click "Try it out" and edit the payload</li>
+      <li>🔍 Required fields are marked with <code>*</code></li>
+    </ul>
+    <img src="assets/parameters.png" alt="Swagger parameter form" class="step-image" />
+  </div>
+  <!-- Step 5: Editing Data -->
+  <div class="step">
+    <h2>4️⃣ How to Edit or Submit New Data</h2>
+    <p>For POST/PUT endpoints:</p>
+    <ul class="tip-list">
+      <li>📝 Click "Try it out"</li>
+      <li>🧾 Modify the JSON payload in the request body</li>
+      <li>⚠️ Respect data types (e.g. number, string, boolean)</li>
+    </ul>
+    <img src="assets/edit-payload.png" alt="Edit JSON body" class="step-image" />
+  </div>
+
+  <!-- Final Tips -->
+  <div class="note">
+    <strong>💡 Tips:</strong>
+    <ul>
+      <li>Use the <strong>Authorize</strong> button to paste your JWT token first (if required)</li>
+      <li>If a request fails, check the error message and parameter types</li>
+      <li>Swagger is best for exploring and testing during development</li>
+    </ul>
+  </div>
+</div>
