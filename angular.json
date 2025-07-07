@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            
             "outputPath": "dist/client-portal",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -25,9 +26,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+                "node_modules/swagger-ui-dist/swagger-ui.css"
+
             ],
-            "scripts": []
+            "scripts": [  "node_modules/swagger-ui-dist/swagger-ui-bundle.js"
+]
           },
           "configurations": {
             "production": {
@@ -94,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

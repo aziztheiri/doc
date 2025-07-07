@@ -1,0 +1,41 @@
+<div class="presentation">
+  <h1>🧾 Bloc API - General Overview</h1>
+<h2>🎯 Purpose & Use Cases</h2>
+<p>
+  The Bloc API is primarily intended for administrative staff and backend services of the student housing system. It allows integration with other modules like room assignments, dormitory statistics, and maintenance tracking.
+</p>
+  <p>
+    The <strong>Bloc</strong> API is designed to manage buildings in student housing. It provides full management operations such as: creation, modification, deletion, assigning to a dormitory, and associating rooms.
+  </p>
+<h2>🌐 Base URL</h2>
+<p>
+  All endpoints are accessible under the following base URL (example):
+</p>
+<pre><code>https://api.insightweb.com/api</code></pre>
+  <h2>🔐 Authentication</h2>
+  <p>
+    All requests to the API require a valid JWT token to be included in the <code>Authorization</code> header:
+  </p>
+  <pre><code>Authorization: Bearer &lt;your-token&gt;</code></pre>
+
+  <h2>📦 Main Endpoints</h2>
+  <ul>
+    <li><strong>GET</strong> <code>/bloc/all</code> — List all blocs</li>
+    <li><strong>POST</strong> <code>/bloc/add</code> — Add a new bloc</li>
+    <li><strong>PUT</strong> <code>/bloc/update</code> — Update a bloc</li>
+    <li><strong>DELETE</strong> <code>/bloc/delete/{{'{'}}id{{'}'}}</code> — Delete a bloc</li>
+    <li><strong>POST</strong> <code>/bloc/affecter-foyer/{{'{'}}idB{{'}'}}/{{'{'}}idF{{'}'}}</code> — Assign a bloc to a dormitory</li>
+    <li><strong>GET</strong> <code>/bloc/find/{{'{'}}idB{{'}'}}</code> — Retrieve a bloc by ID</li>
+  </ul>
+
+  <h2>🧬 Data Model - Bloc</h2>
+  <p>A <code>Bloc</code> object consists of the following fields:</p>
+  <ul>
+    <li><strong>idB</strong> (Long) — Unique identifier (auto-generated)</li>
+    <li><strong>nomB</strong> (String) — Bloc name</li>
+    <li><strong>capaciteB</strong> (Long) — Bloc capacity</li>
+    <li><strong>foyer</strong> (Object) — Associated dormitory (ManyToOne)</li>
+    <li><strong>chambres</strong> (Array) — List of rooms (OneToMany)</li>
+  </ul>
+
+</div>

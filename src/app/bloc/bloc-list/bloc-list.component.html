@@ -1,0 +1,92 @@
+<div class="bloc-doc-wrapper">
+  <div class="left-panel">
+    <h1 class="endpoint-title">
+      <span class="method-badge">GET</span>
+      <code>/bloc/all</code>
+    </h1>
+
+    <h4>Use Case</h4>
+    <p>
+      You can use this endpoint to display all available blocs on an admin dashboard or for export/reporting purposes.
+    </p>
+
+    <div class="auth-box">
+      🔐 <strong>Authentication Required:</strong> This request requires a JWT token in the <code>Authorization</code> header.
+      <pre><code>Authorization: Bearer &lt;your-token&gt;</code></pre>
+    </div>
+
+    <div class="collapsible-section">
+      <button class="collapsible success" (click)="toggleSection('success')" [class.active]="isSuccessActive">
+        ✅ 200 Request completed successfully.
+      </button>
+      <div class="content" [style.maxHeight]="isSuccessActive ? '500px' : null">
+        <h4>Returned Fields</h4>
+        <ul class="field-info">
+          <li><code>id</code> <em>(Integer)</em> — Unique identifier of the bloc.</li>
+          <li><code>nomBloc</code> <em>(String)</em> — Name of the bloc (e.g., "Bloc A").</li>
+          <li><code>capaciteBloc</code> <em>(Integer)</em> — Maximum capacity of the bloc.</li>
+          <li>
+            <code>chambres</code> <em>(Array)</em> — List of rooms associated with the bloc:
+            <ul>
+              <li><code>numero</code> <em>(Integer)</em> — Room number.</li>
+              <li><code>capacite</code> <em>(Integer)</em> — Room capacity.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+  
+      <button class="collapsible danger" (click)="toggleSection('error')" [class.active]="isErrorActive">
+        ⚠️ This method might return the following HTTP codes: 400, 401, 403, 404, 500
+      </button>
+
+      <div class="content" [style.maxHeight]="isErrorActive ? '500px' : null">
+          <h4>Error Responses</h4>
+    <pre [innerHTML]="highlightJson(errorExample)"></pre>
+        <table class="styled-error-table">
+          <thead>
+            <tr><th>HTTP Code</th><th>Error Code</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>400</td><td>BAD_REQUEST</td><td>Request is invalid.</td></tr>
+            <tr><td>401</td><td>UNAUTHENTICATED</td><td>Authentication credentials are missing or invalid.</td></tr>
+            <tr><td>403</td><td>PERMISSION_DENIED</td><td>Access denied for this operation.</td></tr>
+            <tr><td>404</td><td>NOT_FOUND</td><td>Resource not found.</td></tr>
+            <tr><td>500</td><td>INTERNAL_ERROR</td><td>Internal server error occurred.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-panel">
+  
+
+    <div class="response-box">
+      <h4>Response Sample <span class="status-code">200</span></h4>
+      <div class="pre-wrapper">
+        <span class="copy-icon" (click)="copyJson()">
+          <img *ngIf="!copied" src="assets/copy.png" class="copy-icon" alt="Copy" />
+          <img *ngIf="copied" src="assets/tick.png" class="copy-icon" alt="Copied" />
+        </span>
+        <pre [innerHTML]="highlightJson(responseExample)"></pre>
+      </div>
+
+      <ng-container *ngIf="isLoading">
+        <p class="loading">⏳ Loading...</p>
+      </ng-container>
+      <ng-container *ngIf="responseData">
+        <h4>✅ Live Response:</h4>
+        <pre [innerHTML]="highlightJson(responseData)"></pre>
+      </ng-container>
+      <ng-container *ngIf="error">
+        <h4>❌ Error:</h4>
+        <pre [innerHTML]="highlightJson(error)"></pre>
+      </ng-container>
+
+
+
+     
+    </div>
+  </div>
+</div>
+
